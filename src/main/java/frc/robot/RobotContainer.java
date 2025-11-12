@@ -35,7 +35,8 @@ public class RobotContainer {
 
   public void configureBindings() {
     lift_arm_button_up.whileTrue(new LiftArm(arm, 0.5));
-    lift_arm_button_down.whileFalse(new LiftArm(arm, -0.5));
+    lift_arm_button_down.whileTrue(new LiftArm(arm, -0.5));
+    //comment
   }
 
   public Command getAutonomousCommand() {
