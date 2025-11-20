@@ -10,22 +10,25 @@ import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 import edu.wpi.first.wpilibj2.command.button.Trigger;
 import frc.robot.commands.Autos;
 import frc.robot.commands.Drive;
+import frc.robot.commands.GotoPos;
 import frc.robot.commands.LiftArm;
 import frc.robot.subsystems.Arm;
 import frc.robot.subsystems.Drivetrain;
+import frc.robot.subsystems.FalconArm;
 /**
  * This class is where the bulk of the robot should be declared. Since Command-based is a
  * "declarative" paradigm, very little robot logic should actually be handled in the {@link Robot}
  * periodic methods (other than the scheduler calls). Instead, the structure of the robot (including
  * subsystems, commands, and trigger mappings) should be declared here.
  */
+import frc.robot.subsystems.FalconArm;
 public class RobotContainer {
   private final Drivetrain drivetrain = new Drivetrain();
   private final Arm arm = new Arm();
+  private final FalconArm falconArm = new FalconArm();
   private final CommandXboxController controller = new CommandXboxController(0);
   private final Drive drive = new Drive(drivetrain, controller);
   private Trigger lift_arm_button_up = controller.a();
-  private Trigger lift_arm_button_down = controller.b();
 
   public RobotContainer() {
     configureBindings();
@@ -34,9 +37,7 @@ public class RobotContainer {
   }
 
   public void configureBindings() {
-    lift_arm_button_up.whileTrue(new LiftArm(arm, 0.5));
-    lift_arm_button_down.whileTrue(new LiftArm(arm, -0.5));
-    //comment
+    lift_arm_button_up.whileTrue(new GotoPos(falconArm, 0.5));
   }
 
   public Command getAutonomousCommand() {
