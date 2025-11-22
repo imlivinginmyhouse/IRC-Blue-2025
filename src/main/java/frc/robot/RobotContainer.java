@@ -8,7 +8,7 @@ import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 import edu.wpi.first.wpilibj2.command.button.Trigger;
-import frc.robot.commands.Autos;
+import frc.robot.commands.BasicAuto;
 import frc.robot.commands.Drive;
 import frc.robot.commands.GotoPos;
 import frc.robot.commands.LiftArm;
@@ -24,7 +24,7 @@ import frc.robot.subsystems.FalconArm;
 import frc.robot.subsystems.FalconArm;
 public class RobotContainer {
   private final Drivetrain drivetrain = new Drivetrain();
-  private final Arm arm = new Arm();
+  //private final Arm arm = new Arm();
   private final FalconArm falconArm = new FalconArm();
   private final CommandXboxController controller = new CommandXboxController(0);
   private final Drive drive = new Drive(drivetrain, controller);
@@ -41,6 +41,6 @@ public class RobotContainer {
   }
 
   public Command getAutonomousCommand() {
-    return Autos.exampleAuto(drivetrain);
+    return new BasicAuto(drivetrain, falconArm);
   }
 }
