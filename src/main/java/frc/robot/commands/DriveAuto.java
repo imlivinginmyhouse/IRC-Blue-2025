@@ -14,7 +14,7 @@ public class DriveAuto extends Command{
     }
 
     @Override
-    public void execute() {
+    public void initialize() {
         drivetrain.drive(lSpeed, rSpeed);
     }
 

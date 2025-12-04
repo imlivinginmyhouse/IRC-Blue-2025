@@ -1,14 +1,18 @@
-package frc.robot.commands;
 
-import edu.wpi.first.wpilibj2.command.SequentialCommandGroup;
-import frc.robot.subsystems.Drivetrain;
-import frc.robot.subsystems.FalconArm;
+// package frc.robot.commands;
 
-public class BasicAuto extends SequentialCommandGroup{
+// import edu.wpi.first.wpilibj2.command.PrintCommand;
+// import edu.wpi.first.wpilibj2.command.SequentialCommandGroup;
+// import frc.robot.subsystems.Drivetrain;
+// import frc.robot.subsystems.FalconArm;
 
-    public BasicAuto(Drivetrain drivetrain, FalconArm falconArm) {
-        addCommands(
-            new DriveAuto(drivetrain, 0.5, 0.5).withTimeout(1.5)
-        );
-    }
-}
+// public class BasicAuto extends SequentialCommandGroup{
+
+//     public BasicAuto(Drivetrain drivetrain, FalconArm falconArm) {
+//         System.out.println("auto constructor");
+//         addCommands(
+//             new DriveAuto(drivetrain, 0.5, 0.5),
+//             new PrintCommand("running auto")
+//         );
+//     }
+// }

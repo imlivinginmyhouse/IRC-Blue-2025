@@ -12,7 +12,7 @@ public class FalconArm extends SubsystemBase{
     private PositionVoltage positionVoltage;
 
     public FalconArm() {
-        falcon = new TalonFX(0);
+        falcon = new TalonFX(3);
         Slot0Configs config = new Slot0Configs();
         config.kP = Constants.ArmConstants.kP;
         config.kI = Constants.ArmConstants.kI;
@@ -26,6 +26,6 @@ public class FalconArm extends SubsystemBase{
     }
 
     public void periodic() {
-        System.out.println(falcon.getPosition().getValueAsDouble());
+        //System.out.println(falcon.getPosition().getValueAsDouble());
     }
 }
