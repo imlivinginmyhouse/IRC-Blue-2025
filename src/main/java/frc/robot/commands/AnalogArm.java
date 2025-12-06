@@ -16,7 +16,7 @@ public class AnalogArm extends Command{
     }
 
     public void execute() {
-        arm.setGoalPosition(controller.getRightTriggerAxis() * 3);
+        arm.setGoalPosition(controller.getRightTriggerAxis() * 30);
         //System.out.println(controller.getRightTriggerAxis());
     }
 

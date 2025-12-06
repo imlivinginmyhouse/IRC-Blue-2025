@@ -8,10 +8,8 @@ import frc.robot.subsystems.FalconArm;
 public class Autos extends Command {
   public static Command exampleAuto(Drivetrain drivetrain, FalconArm falconArm) {
     return new SequentialCommandGroup(
-        drivetrain.new Drive(1, 1).withTimeout(2),
-        drivetrain.new Drive(-1, -1).withTimeout(0.35),
-        new GotoPos(falconArm, 3.00).withTimeout(0.5),
-        new GotoPos(falconArm, 0).withTimeout(0.3)
+        drivetrain.new Drive(1, 1).withTimeout(1.5),
+        drivetrain.new Drive(-1, -1).withTimeout(0.23)
     );
   }
 
